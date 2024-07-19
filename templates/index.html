@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Encryption/Decryption</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://wallpapercave.com/wp/wp4770078.jpg'); /* Ensure this URL is correct */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Image Encryption and Decryption</h1>
+            <p class="lead">Upload an image to encrypt or decrypt it</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Encrypt Image</h3>
+                <form action="/encrypt" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="encryptFile">Choose an image to encrypt:</label>
+                        <input type="file" class="form-control" id="encryptFile" name="file" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Encrypt</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3>Decrypt Image</h3>
+                <form action="/decrypt" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="decryptFile">Choose an encrypted image to decrypt:</label>
+                        <input type="file" class="form-control" id="decryptFile" name="file" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="keyFile">Upload the key file:</label>
+                        <input type="file" class="form-control" id="keyFile" name="key_file" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Decrypt</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Image {{ action.capitalize() }} Result</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Your image has been {{ action }} successfully!</h3>
+                <img src="{{ image_url }}" class="img-fluid" alt="{{ action }} image">
+                {% if action == 'encrypted' %}
+                    <div class="mt-3">
+                        <a href="{{ key_url }}" class="btn btn-custom">Download Key</a>
+                    </div>
+                {% endif %}
+                <div class="mt-3">
+                    <a href="{{ image_url }}" class="btn btn-custom">Download {{ action.capitalize() }} Image</a>
+                </div>
+                <div class="mt-3">
+                    <a href="/" class="btn btn-secondary">Go Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
